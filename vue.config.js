@@ -15,7 +15,6 @@ module.exports = defineConfig({
   productionSourceMap: false,
   // lintOnSave: process.env.NODE_ENV !== 'production',
   lintOnSave: false,
-  publicPath: process.env.NODE_ENV === 'development' ? '/' : './',
-  outputDir: 'dist',
-  assetsDir: 'assets'
+  publicPath: process.env.NODE_ENV === 'development' ? '/' : 'https://coolooks.github.io/coo/',
+  outputDir: 'dist'
 })
