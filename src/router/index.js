@@ -11,8 +11,13 @@ Router.prototype.push = function push(location) {
 
 const routerMap = [
   {
-    path: '/home',
+    path: '/',
     name: 'home',
+    component: () => import('@/views/home')
+  },
+  {
+    path: '/home',
+    name: 'home1',
     component: () => import('@/views/HomeView')
   },
   {
