@@ -1,1 +1,0 @@
-"use strict";(self["webpackChunklog"]=self["webpackChunklog"]||[]).push([[132],{6132:function(e,n,s){s.r(n),s.d(n,{default:function(){return r}});var t=function(){var e=this,n=e.$createElement,s=e._self._c||n;return s("div",{staticClass:"home"},[e._v(" sdfsdfsdfdsf ")])},l=[],u={name:"HomeView",components:{}},f=u,c=s(1001),o=(0,c.Z)(f,t,l,!1,null,null,null),r=o.exports}}]);
