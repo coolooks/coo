@@ -10,7 +10,11 @@
   "dependencies": {
     "core-js": "^3.8.3",
     "element-ui": "^2.15.9",
+    "github-markdown-css": "^5.1.0",
+    "html-loader": "^3.1.0",
     "lottie-web": "^5.9.4",
+    "markdown-loader": "^8.0.0",
+    "marked": "^4.0.16",
     "vue": "^2.6.14",
     "vue-router": "^3.5.4"
   },
@@ -23,7 +27,7 @@
     "babel-plugin-component": "^1.1.1",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "sass": "^1.52.2",
+    "sass": "^1.32.12",
     "sass-loader": "^13.0.0",
     "vue-template-compiler": "^2.6.14"
   },

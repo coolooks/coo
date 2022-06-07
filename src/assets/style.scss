@@ -1,1 +1,65 @@
 @import './reset.scss';
+
+.custom-scrollbar{
+  &::-webkit-scrollbar {
+    width: 6px;    
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: rgba(0,0,0,0);
+    cursor: pointer;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 0;
+  }
+  &:hover{
+    &::-webkit-scrollbar-thumb{
+      background: rgba(0,0,0,0.12);
+    }
+  }
+}
+
+.overflow-1-row {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.overflow-2-row {
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.overflow-3-row {
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+// 
+.md-context{
+  h1, h2, h3, h4, h5, h6{
+    font-weight: 700;
+  }
+  h1{
+    font-size: 26px;
+  }
+  h2{
+    font-size: 22px;
+  }
+  h3{
+    font-size: 20px;
+  }
+  h4{
+    font-size: 18px;
+  }
+  h5, h6{
+    font-size: 16px;
+  }
+}

@@ -3,6 +3,7 @@
     <div class="left" @mouseenter="bgAnime = true" @mouseleave="bgAnime = false">
       <h2 class="name">Connor Zhang</h2>
       <p class="sub">Think twice, code once.</p>
+      <router-link class="enter" to="/note">Enter <i class="el-icon-right"></i></router-link>
     </div>
     <div class="right">
       <div class="contain" id="contain"></div>
@@ -13,7 +14,6 @@
 
 <script>
 import lottie from 'lottie-web';
-import lottleJSON from '@/assets/images/lf20_nedzkmew.json';
 export default {
   name: 'homePage',
   data() {
@@ -22,12 +22,13 @@ export default {
     }
   },
   mounted() {
+    let { origin, pathname } = window.location
     lottie.loadAnimation({
       container: document.querySelector('#contain'),
-      // path: lottleJSON,
+      path: `${origin}${pathname}/images/lf20_nedzkmew.json`,
       loop: true,
       renderer: 'svg',
-      animationData: lottleJSON
+      // animationData: lottleJSON
     })
   },
 }
@@ -60,7 +61,7 @@ export default {
     width: 50%;
     padding: 150px 0 0 180px;
     color: #fff;
-    text-shadow: 0 4px 8px rgba($color: #0b3d91, $alpha: 0.6);
+    text-shadow: 0 4px 10px rgba($color: #0b3d91, $alpha: 0.7);
     // background-color: #eee;
     .name{
       font-size: 60px;
@@ -71,6 +72,18 @@ export default {
       font-size: 40px;
       margin-left: 260px;
       white-space: nowrap;
+    }
+    .enter{
+      display: block;
+      margin-top: 20px;
+      margin-left: 260px;
+      color: #fff;
+      font-size: 30px;
+      cursor: pointer;
+      transition: .3s all;
+      &:hover{
+        transform: translateX(6px);
+      }
     }
   }
   .right{

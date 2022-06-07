@@ -1,0 +1,11 @@
+/* 改变主题色变量 */
+@use "sass:math";
+$page-width: 1000px;
+$--color-primary: #0A42A0;
+$--border-radius-small: 2px;
+
+$--button-border-radius: $--border-radius-small;
+$--button-medium-border-radius: $--border-radius-small;
+$--input-border-radius: $--border-radius-small;
+$--alert-border-radius: $--border-radius-small;
+$--avatar-border-radius: $--border-radius-small;
