@@ -6,8 +6,10 @@ module.exports = {
     [
       "component",
       {
+        "ext": ".scss",
         "libraryName": "element-ui",
-        "styleLibraryName": "theme-chalk"
+        "styleLibraryName": "~node_modules/element-ui/packages/theme-chalk/src"
+        // "styleLibraryName": "theme-chalk"
       }
     ]
   ]
