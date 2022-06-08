@@ -1,5 +1,17 @@
 @import './reset.scss';
 
+.link{
+  color: $--color-primary;
+  &:hover{
+    text-decoration: underline;
+  }
+}
+
+.tip{
+  font-size: 14px;
+  color: #909399;
+}
+
 .custom-scrollbar{
   &::-webkit-scrollbar {
     width: 6px;    
@@ -43,7 +55,15 @@
 }
 
 // 
-.md-context{
+.markdown-body{
+  ul, li, ol{
+    list-style: revert;
+  }
+  h1, h2, h3, h4, h5, h6{
+    border-bottom: 0;
+  }
+}
+.context{
   h1, h2, h3, h4, h5, h6{
     font-weight: 700;
   }

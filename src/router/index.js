@@ -4,7 +4,6 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 import Note from './note';
-import Record from './record';
 import Learn from './learn';
 import About from './about';
 
@@ -21,7 +20,6 @@ const routerMap = [
     component: () => import('@/views/home')
   },
   ...Note,
-  ...Record,
   ...Learn,
   ...About,
   {

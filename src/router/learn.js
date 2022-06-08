@@ -4,13 +4,20 @@ export default [
   {
     path: '/learn',
     name: 'learn',
-    redirect: { name: 'learn-list' },
+    redirect: { name: 'learn-index' },
     component: layout,
     children: [
       {
-        path: 'list',
-        name: 'learn-list',
-        component: () => import('@/views/note/list')
+        path: 'index',
+        name: 'learn-index',
+        meta: { noSidebar: true },
+        component: () => import('@/views/learn/index')
+      },
+      {
+        path: ':id',
+        name: 'learn-article',
+        props: true,
+        component: () => import('@/views/article')
       },
     ],
   },

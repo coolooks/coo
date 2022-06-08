@@ -23,9 +23,8 @@ export default {
     return {
       list: [
         { id: 1, name: '笔记', to: 'note' },
-        { id: 2, name: '记录', to: 'record' },
-        { id: 3, name: '学习', to: 'learn' },
-        { id: 4, name: '关于', to: 'about' },
+        { id: 2, name: '学习', to: 'learn' },
+        { id: 3, name: '关于', to: 'about' },
       ]
     }
   },
@@ -54,7 +53,7 @@ export default {
   align-items: center;
   .left{
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
     color: $--color-primary;
     cursor: pointer;
   }

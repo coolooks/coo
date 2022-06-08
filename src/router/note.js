@@ -4,13 +4,20 @@ export default [
   {
     path: '/note',
     name: 'note',
-    redirect: { name: 'note-detail' },
+    redirect: { name: 'note-index' },
     component: layout,
     children: [
       {
-        path: 'detail',
-        name: 'note-detail',
-        component: () => import('@/views/detail')
+        path: 'index',
+        name: 'note-index',
+        meta: { noSidebar: true },
+        component: () => import('@/views/note/index')
+      },
+      {
+        path: ':id',
+        name: 'note-article',
+        props: true,
+        component: () => import('@/views/article')
       },
     ],
   },

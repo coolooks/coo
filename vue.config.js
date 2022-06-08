@@ -24,7 +24,13 @@ module.exports = defineConfig({
           ]
         }
       ]
-    }
+    },
+
+    // 
+    cache: {
+      type: 'filesystem',
+      cacheDirectory: resolve('.cache'),
+    },
   },
 
   devServer: {
