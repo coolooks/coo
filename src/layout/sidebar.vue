@@ -1,8 +1,8 @@
 <template>
-  <div class="sidebar">
+  <div class="sidebar" v-if="show">
     <ul class="list custom-scrollbar">
-      <li class="item">
-        <router-link class="wrap overflow-1-row" to="/" v-for="(item, index) in 20" :key="index">标题 - {{ item }}</router-link>
+      <li class="item" v-for="(item, index) in list" :key="index">
+        <router-link class="wrap overflow-1-row" :class="$route.params.id === item.id ? 'on' : ''" :to="{ name: routeName + '-article', params: { id: item.id }}">{{ item.title }}</router-link>
       </li>
     </ul>
   </div>
@@ -10,21 +10,34 @@
 
 <script>
 export default {
-  name: 'leyoutHead',
+  name: 'sideBar',
   data() {
     return {
-      list: [
-        { id: 1, name: '笔记', to: 'note' },
-        { id: 2, name: '记录', to: 'record' },
-        { id: 3, name: '学习', to: 'learn' },
-        { id: 4, name: '关于', to: 'about' },
-      ]
+      list: []
     }
   },
   computed: {
+    show({ $route }) {
+      let { meta } = $route
+      return meta && meta.noSidebar ? false : true
+    },
     routeName({ $route }) {
-      let { name } = $route
-      return name
+      let { matched } = $route
+      return (matched && matched.length) ? matched[0].name : ''
+    }
+  },
+  methods: {
+    requireHandler() {
+      if (this.routeName === 'about') return false
+      this.list = require(`@/views/${this.routeName}/list.js`).default
+    },
+  },
+  created() {
+    this.requireHandler()
+  },
+  watch: {
+    routeName() {
+      this.requireHandler()
     }
   }
 }
@@ -45,12 +58,12 @@ export default {
     .item{
       .wrap{
         display: block;
-        font-size: 14px;
+        font-size: 16px;
         text-decoration: none;
         line-height: 2.2;
         color: #909299;
         transition: .3s color;
-        &:hover{
+        &.on, &:hover{
           color: $--color-primary;
         }
       }

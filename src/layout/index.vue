@@ -6,7 +6,9 @@
     <sidebar></sidebar>
     <!-- 页面 -->
     <page-view>
-      <router-view></router-view>
+      <!-- <transition name="fade" mode="out-in"> -->
+        <router-view :key="$route.fullPath"></router-view>
+      <!-- </transition> -->
     </page-view>
   </div>
 </template>
@@ -36,5 +38,18 @@ export default {
   margin: 0 auto;
   position: relative;
   color: #303133;
+}
+
+//globl transition css
+
+/*fade*/
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.15s;
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
 }
 </style>
