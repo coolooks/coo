@@ -7,6 +7,7 @@
 <script>
 import "highlight.js/styles/stackoverflow-light.css";
 import { marked } from 'marked';
+import NProgress from 'nprogress'
 export default {
   name: 'articlePage',
   props: ['id'],
@@ -23,9 +24,13 @@ export default {
   },
   created() {
     const detail = require(`./${this.routeName}/${this.id}.md`).default
-    this.htmlText = marked(detail)
+    this.htmlText = marked.parse(detail)
+    let titleDOM = this.htmlText.match(/<h1[^>]*>(?:.|[\r\n])*<\/h1>/)[0]
+    let title = document.createElement('div')
+    title.innerHTML = titleDOM
+    document.title = title.children[0].innerText
     this.$nextTick(() => {
-      //js代码 随便加在某个全站调用的js文件中即可
+      // md文件链接，为所有超链接添加_blank属性
       var aTagArr = [].slice.apply(document.getElementsByTagName("a"));
       var myhost = window.location.host;
       aTagArr.forEach(function (e) {
@@ -33,6 +38,9 @@ export default {
         let ohost = e.href.match(/:\/\/(.*?)\//i);
         ohost[1] != myhost ? e.target = "_blank" : null;
       });
+
+      // 
+      NProgress.done()
     })
   },
 }

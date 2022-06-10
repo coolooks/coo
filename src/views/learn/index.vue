@@ -2,7 +2,7 @@
   <div class="note-index context">
     <h2>最近更新</h2>
     <div class="list">
-      <div class="item" v-for="(item, index) in list" :key="index">
+      <div class="item" v-for="(item, index) in list" :key="index"  @click="toTitle(item)">
         <router-link
           class="link"
           :to="{ name: 'learn-article', params: { id: item.id }}"
@@ -21,6 +21,11 @@ export default {
   data () {
     return {
       list
+    }
+  },
+  methods: {
+    toTitle({ title }) {
+      document.title = title
     }
   },
 }
