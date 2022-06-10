@@ -21,7 +21,6 @@ router.beforeEach((to, from, next) => {
     document.title = 'A small FE ~~'
     NProgress.done()
   }
-  console.log('to', to);
   next()
 })
 
