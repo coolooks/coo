@@ -5,8 +5,6 @@ import {
   Loading,
   MessageBox,
   Message,
-  Icon,
-  Image,
 } from 'element-ui';
 
 Vue.prototype.$ELEMENT = { size: 'small' };
@@ -15,8 +13,6 @@ Vue
   .use(Button)
   .use(ButtonGroup)
   .use(Loading)
-  .use(Icon)
-  .use(Image)
 ;
 
 Vue.prototype.$loading = Loading.service;
